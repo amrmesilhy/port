@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Icons link -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <!-- CSS file link -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Site favicon -->
+    <link rel="shortcut icon" href="assets/images/a.png" type="image/x-icon">
+    <title>Portfolio</title>
+</head>
+<body>
+   <div class="container">
+      <!-- Navigation bar -->
+      <nav id="header">
+         <div class="nav-logo">
+            <p class="nav-name">Amr Mesilhy</p>
+            <span></span>
+         </div>
+         <div class="nav-menu" id="myNavMenu">
+            <ul class="nav_menu_list">
+               <li class="nav_list">
+                  <a href="#home" class="nav-link active-link">Home</a>
+                  <div class="circle"></div>
+               </li>
+               <li class="nav_list">
+                  <a href="#about" class="nav-link">About</a>
+                  <div class="circle"></div>
+               </li>
+               <li class="nav_list">
+                  <a href="#projects" class="nav-link">Projects</a>
+                  <div class="circle"></div>
+               </li>
+               <li class="nav_list">
+                  <a href="#contact" class="nav-link">Contact</a>
+                  <div class="circle"></div>
+               </li>
+            </ul>
+         </div>
+         <div class="nav-menu-btn">
+            <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+         </div>
+         <!-- Dark mode toggle button -->
+         <div class="dark-mode-toggle">
+            <i class="uil uil-moon" id="darkModeBtn"></i>
+         </div>
+      </nav>
+
+      <main class="wrapper">
+         <!-- Featured section -->
+         <section class="featured-box" id="home">
+            <div class="featured-text">
+               <div class="featured-text-card"></div>
+               <div class="featured-name">
+                  <p>I'm <span class="typedText"></span></p>
+               </div>
+               <div class="featured-text-info">
+                  <p>Front-end developer. I have more than 4 years of experience and this is part of my projects</p>
+               </div>
+               <div class="featured-text-btn">
+                  <button class="btn blue-btn">Hire Me</button>
+                  <button class="btn">Download CV <i class="uil uil-file-alt"></i></button>
+               </div>
+               <div class="social_icons">
+                  <div class="icon"><i class="uil uil-instagram"></i></div>
+                  <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
+                  <div class="icon"><i class="uil uil-github-alt"></i></div>
+               </div>
+            </div>
+            <div class="featured-image">
+               <div class="image">
+                  <img src="assets/images/Screenshot_2024-12-29-21-30-47-63_99c04817c0de5652397fc8b56c3b3817.png" alt="Avatar">
+               </div>
+            </div>
+            <div class="scroll-icon-box">
+               <a href="#about" class="scroll-btn">
+                  <i class="uil uil-mouse-alt"></i>
+                  <p>Scroll Down</p>
+               </a>
+            </div>
+         </section>
+
+         <!-- About section -->
+         <section class="section" id="about">
+            <div class="top-header">
+               <h1>About Me</h1>
+            </div>
+            <div class="row">
+               <div class="col">
+                  <div class="about-info">
+                     <h3>Me</h3>
+                     <p>"I am Amr Mesilhy, I have been learning programming for 4 years. Specifically, I am learning web design and I am a front-end developer. I am always working on designing projects in order to develop myself, and I also aspire to become a full-stack developer."</p>
+                     <div class="about-btn">
+                        <button class="btn">Download CV <i class="uil uil-import"></i></button>
+                     </div>
+                  </div>
+               </div>
+               <div class="col">
+                  <div class="skills-box">
+                     <div class="skills-header">
+                        <h3>Frontend</h3>
+                     </div>
+                     <div class="skills-list">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>React</span>
+                        <span>TailwindCss</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- Projects section (with buttons for both sections) -->
+         <section class="section" id="projects">
+            <div class="top-header">
+               <h1>Projects</h1>
+            </div>
+            <div class="project-container">
+               <div class="project-box completed-box">
+                  <i class="uil uil-briefcase-alt"></i>
+                  <h3>Completed</h3>
+                  <button class="btn view-projects-btn">View Projects</button>
+               </div>
+               <div class="project-box testimonials-box">
+                  <i class="uil uil-award"></i>
+                  <h3>My Testimonials</h3>
+                  <button class="btn view-certificates-btn">View Certificates</button>
+               </div>
+            </div>
+         </section>
+
+         <!-- Contact section -->
+         <section class="section" id="contact">
+            <div class="top-header">
+               <h1>Contact</h1>
+            </div>
+            <div class="contact-container">
+               <div class="contact-card">
+                  <h2>Get In Touch</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                  <div class="contact-details">
+                     <p><i class="uil uil-phone"></i> Phone: +20 1276 365 652</p>
+                     <p><i class="uil uil-envelope"></i> Email: amr2mesilhy2@gmail.com</p>
+                     <p><i class="uil uil-location-point"></i> Location: Cairo, Egypt</p>
+                  </div>
+                  <div class="contact-social">
+                     <h3>Follow Me</h3>
+                     <div class="social_icons">
+                        <div class="icon"><i class="uil uil-facebook-f"></i></div>
+                        <div class="icon"><i class="uil uil-instagram"></i></div>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </section>
+      </main>
+
+      <!-- Footer -->
+      <footer>
+         <div class="footer-social-icons">
+            <div class="icon"><i class="uil uil-instagram"></i></div>
+            <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
+            <div class="icon"><i class="uil uil-github-alt"></i></div>
+         </div>
+         <div class="bottom-footer">
+            <p>Copyright © <a href="#home" style="text-decoration: none;">Amr Mesilhy</a></p>
+         </div>
+      </footer>
+
+      <!-- Modal for projects display -->
+      <div id="projectModal" class="modal">
+         <div class="modal-content">
+            <span class="close-btn">×</span>
+            <div class="project-gallery">
+               <img src="assets/images/w1.png" alt="Project 1" class="project-img">
+               <img src="assets/images/w2 (1).png" alt="Project 2" class="project-img">
+               <img src="assets/images/w2 (2).png" alt="Project 3" class="project-img">
+               <img src="assets/images/w3.png" alt="Project 3" class="project-img">
+               <img src="assets/images/w4.png" alt="Project 3" class="project-img">
+            </div>
+         </div>
+      </div>
+
+      <!-- Modal for certificates display -->
+      <div id="certificateModal" class="modal">
+         <div class="modal-content">
+            <span class="close-btn">×</span>
+            <div class="certificate-gallery">
+               <img src="assets/images/c1 (1).jpg" alt="Certificate 1" class="certificate-img">
+               <img src="assets/images/c1 (2).jpg" alt="Certificate 2" class="certificate-img">
+               <img src="assets/images/c1 (3).jpg" alt="Certificate 3" class="certificate-img">
+               <img src="assets/images/c1 (4).jpg" alt="Certificate 4" class="certificate-img">
+               <img src="assets/images/c1 (5).jpg" alt="Certificate 5" class="certificate-img">
+            </div>
+         </div>
+      </div>
+
+      <!-- Modal for large image display -->
+      <div id="largeImageModal" class="modal">
+         <div class="modal-content">
+            <span class="close-btn">×</span>
+            <img id="largeImage" src="" alt="Large Image">
+         </div>
+      </div>
+   </div>
+
+   <!-- JavaScript libraries -->
+   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+   <script src="https://unpkg.com/scrollreveal"></script>
+   <script src="assets/js/main.js"></script>
+</body>
+</html>
