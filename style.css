@@ -1,0 +1,409 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #422407;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+    perspective: 1000px;
+    font-family: 'Cairo', sans-serif;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.container {
+    text-align: center;
+    padding: 0.5vh 0;
+    margin-top: 3vh;
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 80rem;
+}
+
+.logo {
+    width: 150px; /* العودة لحجم اللوجو الأصلي */
+    max-width: 100%;
+    transition: transform 0.1s ease-out;
+    animation: sway 8s ease-in-out infinite;
+    user-select: none;
+    transform-style: preserve-3d;
+}
+
+.slogan {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 6vw, 4rem);
+    color: #FF9800;
+    margin-top: 2vh;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.slogan::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 3vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.thought-input {
+    width: 100%;
+    max-width: 25rem;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    color: #FFFFFF;
+    background-color: rgba(255, 255, 205, 0.1);
+    border: 2px solid #FF9800;
+    border-radius: 2rem;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0.5rem rgba(255, 152, 0, 0.3);
+}
+
+.thought-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.thought-input:focus {
+    width: 100%;
+    max-width: 26rem;
+    border-color: #FFFFFF;
+    box-shadow: 0 0 1.5rem rgba(255, 152, 0, 0.8), 0 0 0.5rem rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.2);
+    animation: pulse 0.5s ease-in-out;
+}
+
+.thought-input:blur {
+    width: 100%;
+    max-width: 25rem;
+    border-color: #FF9800;
+    box-shadow: 0 0 0.5rem rgba(255, 152, 0, 0.3);
+    transform: scale(1);
+    background-color: rgba(255, 255, 205, 0.1);
+}
+
+/* تأثير النبض عند الضغط */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1.05); }
+}
+
+.go-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    background: linear-gradient(45deg, #FF9800, #F57C00);
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    min-width: 10rem;
+    /* إضافة نفس الخط المستخدم في الـ slogan */
+    font-family: 'Cairo', sans-serif;
+}
+
+#result-box {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    width: 80%;
+    max-width: 40rem;
+    background-color: #4a2c0a;
+    border: 2px solid #FF9800;
+    border-radius: 1.5rem;
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    min-height: 6rem;
+    display: none;
+    animation: slideIn 0.5s ease forwards;
+    position: relative;
+    z-index: 10;
+    opacity: 1;
+    font-weight: 600;
+}
+
+#result-box.error {
+    color: #FFFFFF;
+    background-color: #6d0d0d;
+    border-color: #FF0000;
+}
+
+.button-group {
+    display: none;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.refresh-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    background: linear-gradient(45deg, #FF9800, #F57C00);
+    border: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 8rem;
+}
+
+.refresh-btn:hover {
+    background: linear-gradient(45deg, #F57C00, #FF9800);
+    box-shadow: 0 0 1.5rem rgba(255, 152, 0, 0.8);
+    transform: translateY(-0.2rem);
+}
+
+/* تصميم الفوتر المصغر أكثر */
+.footer {
+    text-align: center;
+    padding: 0.5vh 0;
+    width: 100%;
+    background-color: rgba(74, 44, 10, 0.9);
+    border-top: 2px solid #FF9800;
+    position: relative;
+    z-index: 10;
+    margin-top: 2vh;
+}
+
+.footer-logo {
+    width: 2.5rem;
+    margin-top: 1.5rem;
+    user-select: none;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-title {
+    color: #FF9800;
+    font-size: 0.85em;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hand-icon {
+    font-size: 0.9em;
+    color: #FF9800;
+}
+
+.footer-guidelines {
+    color: #FFFFFF;
+    font-size: 0.75em;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin: 0.10rem 0;
+}
+
+.social-icon {
+    color: #FF9800;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #F57C00;
+    transform: scale(1.2);
+}
+
+.footer-copyright {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.7em;
+    font-weight: 700;
+}
+
+/* تأثيرات الانيميشن */
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateY(5vh) scale(0.9); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+@keyframes sway {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.go-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: 0;
+}
+
+.go-btn:hover::before {
+    width: 30vw;
+    height: 30vw;
+}
+
+.go-btn:hover {
+    background: linear-gradient(45deg, #F57C00, #FF9800);
+    box-shadow: 0 0 2rem rgba(255, 152, 0, 0.8);
+    transform: translateY(-0.3rem) scale(1.05);
+}
+
+/* وسائط استجابة */
+@media (max-width: 768px) {
+    .slogan {
+        font-size: clamp(1.5rem, 5vw, 3rem);
+    }
+
+    .thought-input {
+        max-width: 20rem;
+    }
+
+    .thought-input:focus {
+        max-width: 21rem;
+    }
+
+    .go-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        min-width: 8rem;
+    }
+
+    #result-box {
+        max-width: 30rem;
+        font-size: 1rem;
+    }
+
+    .refresh-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+        min-width: 7rem;
+    }
+
+    .footer-title {
+        font-size: 0.75em;
+    }
+
+    .footer-guidelines {
+        font-size: 0.65em;
+    }
+
+    .footer-copyright {
+        font-size: 0.6em;
+    }
+
+    .social-icon {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 150px; /* الحفاظ على الحجم الأصلي */
+    }
+
+    .slogan {
+        font-size: clamp(1rem, 4vw, 2rem);
+    }
+
+    .input-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .thought-input {
+        max-width: 15rem;
+    }
+
+    .thought-input:focus {
+        max-width: 16rem;
+    }
+
+    .go-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        min-width: 6rem;
+    }
+
+    #result-box {
+        max-width: 20rem;
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+
+    .button-group {
+        gap: 1rem;
+    }
+
+    .refresh-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+        min-width: 6rem;
+    }
+
+    .footer-logo {
+        width: 2rem;
+    }
+
+    .footer-title {
+        font-size: 0.7em;
+    }
+
+    .footer-guidelines {
+        font-size: 0.6em;
+    }
+
+    .footer-copyright {
+        font-size: 0.5em;
+    }
+
+    .social-icon {
+        font-size: 1rem;
+    }
+}
