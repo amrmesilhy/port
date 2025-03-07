@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>واجهة موقع بسيط</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="container">
+        <img src="Untitled-22.png" alt="Logo" class="logo">
+        <p class="slogan" id="typing-text"></p>
+        <div class="input-group">
+            <input type="text" class="thought-input" placeholder="اكتب كلمة بماذا يفُكر عقلك؟">
+            <button class="go-btn" onclick="showRandomQuote()">هيا</button>
+        </div>
+        <div id="result-box"></div>
+        <div class="button-group">
+            <button class="refresh-btn" onclick="refreshPage()">أعاده</button>
+            <button class="download-btn" onclick="downloadImage()">تنزيل اللقطة</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <img src="Untitled-22.png" alt="Footer Logo" class="footer-logo">
+        <div class="footer-content">
+            <p class="footer-title">الإرشادات <span class="hand-icon">👇</span></p>
+            <p class="footer-guidelines">اكتب كلمة واضغط "هيا"</p>
+            <p class="footer-copyright">© 2025 جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="quotes.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
